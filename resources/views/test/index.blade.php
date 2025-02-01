@@ -6,8 +6,18 @@
 
 @section('content')
 <div class="container">
-    <h1 class="text-center">Tes Soal</h1>
-
+    <h1 class="text-center">Tes Soal DISC</h1>
+    <div class="card mt-4 mb-4">
+        <div class="card-body">
+            <p>
+                <strong>INSTRUKSI:</strong>
+                <ul>
+                    <li>Anda harus menjawab semua pertanyaan dengan benar.</li>
+                    <li>Anda hanya dapat menjawab satu pertanyaan sekaligus.</li>
+                </ul>
+            </p>
+        </div>
+    </div>
     <form action="{{ route('test.store') }}" method="POST" id="testForm">
         @csrf
 
@@ -40,11 +50,14 @@
         @endforeach
 
         <!-- Pagination for next and previous -->
-        <div class="d-flex justify-content-between mb-3">
-            <div>
-                {{ $questions->links() }} <!-- Pagination links -->
-            </div>
-        </div>
+        {{-- <div class="d-flex justify-content-end mt-3">
+            <nav aria-label="Pagination">
+                <ul class="pagination pagination-sm">
+                    {{ $questions->links() }}
+                </ul>
+            </nav>
+        </div> --}}
+        
 
         <button type="submit" class="btn btn-primary btn-block">Kirim Jawaban</button>
     </form>

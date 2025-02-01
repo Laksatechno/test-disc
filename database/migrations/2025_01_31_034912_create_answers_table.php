@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('question_id')->constrained()->onDelete('cascade');
             $table->text('answer_text');
-            $table->integer('score');
+            $table->string('disc_type');
             $table->timestamps();
         });
     }
